@@ -1,0 +1,26 @@
+# include <stdio.h>
+# include <stdio.h>
+//Create an array dynamically capable of storing 5 integers. 
+//Now use realloc so that it can now store 10 integers
+int main(){
+int array[5],i;
+int*ptr=(int*)malloc(5*sizeof(int));
+for (i=0;i<5;i++){
+	printf("Enter element %d\n",i+1);
+	scanf("%d",ptr+i);
+}
+for (i=0;i<5;i++){
+	printf("Element %d is : %d\n",i+1,*(ptr+i));
+
+}
+ptr=(int*)realloc(ptr,10*sizeof(int));
+for (i=5;i<10;i++){
+	printf("Enter element %d\n",i+1);
+	scanf("%d",ptr+i);
+}printf("After the use of realloc \n");
+for (i=0;i<10;i++){
+	printf("Element %d is : %d\n",i+1,*(ptr+i));
+}
+return 0;
+}
+
