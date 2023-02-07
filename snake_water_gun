@@ -1,0 +1,41 @@
+# include <stdio.h>
+# include <stdlib.h> //try puting no space
+# include <time.h>
+//snake gun water game 
+int main(){
+int c;
+char user[20],comp[20];
+printf("Choose between snake ,water and gun\n");
+scanf("%s",&user);
+
+srand(time(0));
+c=rand()%100+1;
+
+if (c>0&&c<33){
+	comp[20]="snake";
+}else if(c>=33&&c<66){
+	comp[20]="gun";
+}else comp[20]="water";
+
+if (user=="snake"&&comp=="water"){
+	printf("congrats ! you win");
+	
+}else if (user=="water"&&comp=="gun"){
+	printf("you choose %s and computer chooses %s congrats ! you win",user,comp);
+}else if (user=="gun"&& comp=="snake"){
+	printf("you choose %s and computer chooses %s congrats ! you win",user,comp);
+}else if (user=="snake"&& comp=="snake"){
+	printf("you choose %s and computer chooses %s its draw",user,comp);
+}else if (user=="water"&&comp=="water"){
+    printf("you choose %s and computer chooses %s its draw",user,comp);
+}else if (user=="gun"&&comp=="gun"){
+	printf("you choose %s and computer chooses %s its draw",user,comp);
+}else if(user=="snake"&&comp=="gun"){
+	printf("you choose %s and computer chooses %s You lost",user,comp);
+}else if (user=="gun"&&comp=="water"){
+	printf("you choose %s and computer chooses %s you lost",user,comp);
+}else {
+	printf("you choose %s and computer chooses %s you lost",user,comp);
+}
+return 0;
+}
