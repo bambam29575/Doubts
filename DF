@@ -1,0 +1,26 @@
+# include <stdio.h>
+void bin_search(int array[],int item,int n);
+
+int main(){
+int array[9]={1,2,3,4,5,6,7,8,9},item=8,n=9;
+bin_search(array,4,9);
+
+
+return 0;
+}
+void bin_search(int array[],int item,int n){
+    int i,m,l=0,u=n-1;
+    
+    for(i=0;i<n;i++){
+        m=(u+l)/2;
+        if (item==array[m]){
+            printf("Search successful at index %d",m);
+            break;
+        }else if(item<array[m]){
+            u=m-1;
+        }else 
+            l=m+1;
+    }
+    printf("The search is unsuccessful\n");
+    
+}
