@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int arr[7] = {1,0,0,1,1,0,0},i , j, count = 0, swap;
+    for(i = 0; i < 7; i++){
+        if(arr[i] == 0){
+            count++;
+            cout << count << endl; 
+        }
+    }for(i = 0; i < count; i++){
+        if(arr[i] == 1){
+            for(j = count; j < 7; j++){
+                if(arr[j] == 0){
+                   swap = arr[i];
+                   arr[i] = arr[j];
+                   arr[j] = swap;
+                   break;
+                }
+            }
+        }for(i = 0; i < 7; i++){
+            cout << arr[i] << " ";
+        }
+    }
+    
+    return 0;
+}
