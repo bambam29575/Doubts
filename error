@@ -1,0 +1,79 @@
+#include <iostream>
+
+using namespace std;
+class hero{
+  
+  private:
+  int age;
+  int salary ;
+  char name ;
+  
+  
+  public:
+//   int getAge(int year) {
+//       age = year;
+//       return age;
+//   }
+//   int getSalary(int money) {
+//       salary = money;
+//       return salary;
+//   }
+//   char getName(char letter) {
+//     //   name = letter;
+//     //   return name;
+//       if (letter == 'c'){
+//           name = letter;
+//           return name;
+//       }
+//       return '\0';
+      
+//   }
+int getAge() {
+      
+      return age;
+  }
+  int getSalary() {
+     
+      return salary;
+  }
+  char getName() {
+    
+          return name;
+      
+      
+      
+  }
+  
+  };
+
+
+int main() {
+    hero prem;
+    // prem.age =34;
+    // prem.salary =12;
+    // prem.name = 'z';
+    
+    hero *b = new hero;
+    b->age = 65;
+    b-> salary = 25;
+    b->name = 'a';
+    
+    // cout << b->age << " " << b->salary << " " << b->name << endl ;
+    cout << b->getAge() << " " << b->getSalary() << " " << b->getName() << endl ;
+    // cout << prem.age << " " << prem.salary << " " << prem.name  << endl;
+    //cout << prem.getAge(78) << " " << prem.getSalary(25) << " " << prem.getName('a') << endl ;
+    delete b;
+
+    return 0;
+}
+
+
+// Accessing members using the arrow operator: When accessing members of an object using a pointer, 
+// you need to use the arrow operator (->) instead of the dot operator (.). Therefore, 
+// instead of b.age, b.salary, and b.name, you should use b->age, b->salary, 
+// and b->name to access the members correctly.
+
+// Uninitialized pointer prem: In your code, you are trying to access the 
+// members of the prem object using the -> operator. However, prem is not a pointer, 
+// it's a regular object. Therefore, you should use the dot operator (.) to access its members 
+// instead of the arrow operator. So it should be prem.age, prem.salary, and prem.name.
