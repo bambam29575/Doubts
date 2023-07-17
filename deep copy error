@@ -1,0 +1,147 @@
+#include <iostream>
+using namespace std;
+#include <string.h>
+
+class hero{
+    
+  
+  private:
+  int age;
+  int salary ;
+  
+//   b->age = 65;
+//   b->salary = 25;
+//   b->name = 'a';
+  
+  //public:
+  
+  public:
+  char *name ;
+  hero() {
+        cout << "constructor called" << endl ;
+        name = new char[100];
+        
+    }
+    void print() {
+        cout << "Name: " << name << endl << "Age: " << age <<endl;
+    }
+    void setName (char name[]) {
+        strcpy(this->name, name);
+    }
+  //copy constructor
+  //DEEP COPY
+      hero(hero& i){
+        cout << "copy consructor called" << endl;
+        char* new = new char[strlen(i.name)+1];
+        strcpy(new,i.name);
+        this->name = i.name;
+        this->age = i.age;
+    
+    }
+  
+//   //SHALLOW COPY
+//     hero(hero &i){
+//         cout << "copy consructor called" << endl;
+//         this->name = i.name;
+//         this->age = i.age;
+//         i.print();
+//     }
+    
+    hero(int age, char name[]){
+        this->age = age;
+        strcpy(this->name, name);
+    }
+    // void print() {
+    //     cout << age << " " << name << endl;
+    // }
+  void setAge(int age) {
+      this->age = age;
+      
+  }
+//   void setSalary(int money) {
+//       salary = money;
+      
+//   }
+//   void setName(char letter) {
+//       name = letter;
+      
+      
+//   }
+//   int getAge() {
+      
+//       return age;
+//   }
+//   int getSalary() {
+     
+//       return salary;
+//   }
+//   char getName() {
+//       if (name == 'c'){
+//       return name;
+//     } 
+//       return '\0';
+      
+//   }
+  
+  };
+
+
+int main() {
+    
+    hero z;
+    char name[] = "Prem";
+    z.setName(name);
+    z.setAge(120);
+    z.print();
+    
+    z.name[0] = 'i';
+    
+    hero x(z);
+    x.print();
+    
+    // hero p(23,'p');
+
+    // p.print();
+    
+    // hero i(p);
+    
+    
+    //hero prem(120,'c');
+    //cout << prem.getName() << " " << prem.getAge();
+    // prem.age =34;
+    // prem.salary =12;
+    // prem.name = 'z';
+    
+    // hero *b = new hero(12,'c');
+    // prem.print();
+    // b->print();
+    // cout << b->getName() << " " << b->getAge() << endl;
+    // cout << (*b).getName() << " " << (*b).getAge();
+    // b->setSalary(50);
+    // b->setAge(120);
+    // b->setName('p');
+    // b->age = 65;
+    // b-> salary = 25;
+    // b->name = 'a';
+    
+    
+    
+    // cout << b->age << " " << b->salary << " " << b->name << endl ;
+    //cout << b->getAge() << " " << b->getSalary() << " " << b->getName() << endl ;
+    // cout << prem.age << " " << prem.salary << " " << prem.name  << endl;
+    //cout << prem.getAge(78) << " " << prem.getSalary(25) << " " << prem.getName('a') << endl ;
+    
+
+    return 0;
+}
+
+
+// Accessing members using the arrow operator: When accessing members of an object using a pointer, 
+// you need to use the arrow operator (->) instead of the dot operator (.). Therefore, 
+// instead of b.age, b.salary, and b.name, you should use b->age, b->salary, 
+// and b->name to access the members correctly.
+
+// Uninitialized pointer prem: In your code, you are trying to access the 
+// members of the prem object using the -> operator. However, prem is not a pointer, 
+// it's a regular object. Therefore, you should use the dot operator (.) to access its members 
+// instead of the arrow operator. So it should be prem.age, prem.salary, and prem.name.
