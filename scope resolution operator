@@ -1,0 +1,26 @@
+# include <iostream>
+using namespace std;
+
+class human{
+    public:
+    void show() {
+        cout << "Inside superclass" << endl;
+    }
+};
+class female {  // By adding like this , it shows error . class female: public human
+    public:
+    void show() {
+        cout << "Inside Female Class" << endl;
+    }
+};
+class male: public female, public human {
+    public:
+};
+
+int main() {
+
+    male obj3;
+    obj3.human::show();
+
+   return 0;
+}
