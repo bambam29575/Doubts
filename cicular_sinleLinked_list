@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+
+class node
+{
+public:
+    int data;
+    node *next;
+
+    node(int num)
+    {
+        this->data = num;
+        this->next = NULL;
+    }
+};
+void insertNode(node *&tail, int position, int num)
+{
+    if (tail == NULL)
+    {
+        node *temp = new node(num);
+        temp->next = temp;
+        tail = temp;
+    }
+    else
+    {
+        node *temp = new node(num);
+        node *current = tail;
+        int count = 1;
+        while (count < position)
+        {
+            current = current->next;
+            count++;
+        }
+        temp->next = current->next;
+        current->next = temp;
+    }
+}
+void print(node *&tail)
+{
+    node *temp = tail;
+    do
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+
+    } while (temp != tail);
+    cout << endl;
+}
+int main()
+{
+    // empty linked list
+    node *tail = NULL;
+
+    insertNode(tail, 2, 10);
+    print(tail);
+
+    insertNode(tail, 2, 20);
+    print(tail);
+
+    insertNode(tail, 3, 30);
+    print(tail);
+
+    return 0;
+}
