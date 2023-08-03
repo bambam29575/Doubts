@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Seminar Table</title>
+</head>
+<!-- Just Focus on row cells of table  -->
+
+<body>
+    <table>
+        <tr>
+            <th rowspan="3" style="border: solid ;">Day </th>
+            <th colspan="4" style="border: solid;">Seminar</th>
+
+        </tr>
+        <tr>
+            <th colspan="2" style="border: solid;">Schedule</th>
+            <th rowspan="2" style=" border: solid;" colspan="2">Topic</th>
+        </tr>
+        <tr>
+            <th style="border: solid;">Begin</th>
+            <th style="border: solid;">End</th>
+        </tr>
+        <tr>
+            <td rowspan="2" style="border: solid;">Monday</td>
+            <td rowspan="2" style="border: solid;"> 8 am</td>
+            <td rowspan="2" style="border: solid;">5 pm</td>
+            <td colspan="2" style="border: solid;">Introdution to XML</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: solid;">Validity: DTD and Relax NG</td>
+        </tr>
+        <tr>
+            <td rowspan="3" style="border: solid;">Tuesday</td>
+            <td style="border: solid;">8 am</td>
+            <td style="border: solid;">11 am</td>
+
+        </tr>
+        <tr>
+            <td style="border: solid;">11 am</td>
+            <td style="border: solid;">2 pm</td>
+            <td colspan="2" rowspan="1.5" style="border: solid;">XP Path</td>
+        </tr>
+        <tr>
+            <td style="border: solid;">2 pm</td>
+            <td style="border: solid;">5 pm</td>
+            <td colspan="2" rowspan="1.5" style="border: solid">XSL Transformation</td>
+        </tr>
+        <tr>
+            <td style="border: solid;">Wedenesday</td>
+            <td style="border: solid;">8 am</td>
+            <td style="border: solid;">12 pm</td>
+            <td colspan="2" style="border: solid;">XSL Formatting Objects</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
